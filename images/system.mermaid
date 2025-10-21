@@ -1,0 +1,52 @@
+graph TB
+    subgraph "User Interface"
+        UI[Streamlit/CLI]
+    end
+    
+    subgraph "Orchestration Layer"
+        LG[LangGraph Workflow]
+    end
+    
+    subgraph "Agent Layer"
+        RA[ReAct Agent]
+        RAG[RAG Engine]
+    end
+    
+    subgraph "Tool Layer"
+        Tools[Tool Registry]
+        Market[Market Data]
+        Calc[Calculator]
+        Tech[Technical Analysis]
+    end
+    
+    subgraph "Storage Layer"
+        VS[(Vector Store)]
+        Cache[(Redis Cache)]
+    end
+    
+    subgraph "LLM Layer"
+        Local[Ollama Local]
+        Cloud[Cloud APIs]
+    end
+    
+    UI --> LG
+    LG --> RA
+    LG --> RAG
+    RA --> Tools
+    RAG --> VS
+    Tools --> Market
+    Tools --> Calc
+    Tools --> Tech
+    RA --> Local
+    RAG --> Local
+    Local -.->|Production| Cloud
+    Tools --> Cache
+    
+    style UI fill:#67e8f9,stroke:#0891b2,stroke-width:2px,color:#000
+    style LG fill:#fbbf24,stroke:#d97706,stroke-width:2px,color:#000
+    style RA fill:#86efac,stroke:#16a34a,stroke-width:2px,color:#000
+    style RAG fill:#86efac,stroke:#16a34a,stroke-width:2px,color:#000
+    style Tools fill:#a78bfa,stroke:#7c3aed,stroke-width:2px,color:#000
+    style VS fill:#fb923c,stroke:#ea580c,stroke-width:2px,color:#000
+    style Local fill:#fca5a5,stroke:#dc2626,stroke-width:2px,color:#000
+    style Cloud fill:#e0e7ff,stroke:#6366f1,stroke-width:2px,color:#000

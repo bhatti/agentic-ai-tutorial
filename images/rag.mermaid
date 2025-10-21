@@ -1,0 +1,18 @@
+graph LR
+    Doc[Documents] --> Chunk[Chunking]
+    Chunk --> Embed[Embeddings]
+    Embed --> VS[(Vector Store)]
+    
+    Query([User Query]) --> QEmbed[Query Embedding]
+    QEmbed --> Search{Similarity Search}
+    VS --> Search
+    Search --> Retrieve[Retrieved Chunks]
+    Retrieve --> Context[Build Context]
+    Context --> LLM[LLM Generation]
+    LLM --> Answer([Grounded Answer])
+    
+    style Doc fill:#fbbf24,stroke:#d97706,stroke-width:2px,color:#000
+    style Query fill:#67e8f9,stroke:#0891b2,stroke-width:2px,color:#000
+    style VS fill:#a78bfa,stroke:#7c3aed,stroke-width:2px,color:#000
+    style LLM fill:#86efac,stroke:#16a34a,stroke-width:2px,color:#000
+    style Answer fill:#67e8f9,stroke:#0891b2,stroke-width:2px,color:#000

@@ -1,0 +1,33 @@
+stateDiagram-v2
+    [*] --> Initialize
+    Initialize --> CollectData: Start Workflow
+    
+    state CollectData {
+        [*] --> MarketData
+        MarketData --> FinancialMetrics
+        FinancialMetrics --> [*]
+    }
+    
+    CollectData --> ParallelAnalysis
+    
+    state ParallelAnalysis {
+        [*] --> Technical
+        [*] --> Fundamental
+        [*] --> Sentiment
+        Technical --> [*]
+        Fundamental --> [*]
+        Sentiment --> [*]
+    }
+    
+    ParallelAnalysis --> ReActReasoning
+    
+    state ReActReasoning {
+        [*] --> Think
+        Think --> Act
+        Act --> Observe
+        Observe --> Think
+        Observe --> [*]: Final Answer
+    }
+    
+    ReActReasoning --> GenerateReport
+    GenerateReport --> [*]: Complete

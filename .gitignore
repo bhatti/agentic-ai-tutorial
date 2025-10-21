@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Data and Models
+data/vector_store/
+data/traces/
+*.db
+*.sqlite
+*.h5
+*.pkl
+*.parquet
+
+# Logs
+logs/
+*.log
+
+# Streamlit
+.streamlit/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# Documentation
+docs/_build/
+site/
+
+# Model files (if stored locally)
+models/
+*.gguf
+*.bin
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+ai-agents-env/

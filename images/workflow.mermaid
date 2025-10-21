@@ -1,0 +1,27 @@
+graph TD
+    Start([Start]) --> Data[Collect Market Data]
+    
+    Data --> |Parallel| Tech[Technical Analysis]
+    Data --> |Parallel| Fund[Fundamental Analysis]
+    Data --> |Parallel| Sent[Sentiment Analysis]
+    Data --> |Conditional| Opt[Options Analysis]
+    
+    Tech --> React[ReAct Reasoning]
+    Fund --> React
+    Sent --> React
+    Opt --> React
+    
+    React --> RAG[RAG Enhancement]
+    RAG --> Report[Generate Report]
+    Report --> End([End])
+    
+    style Start fill:#67e8f9,stroke:#0891b2,stroke-width:2px,color:#000
+    style Data fill:#fbbf24,stroke:#d97706,stroke-width:2px,color:#000
+    style Tech fill:#a78bfa,stroke:#7c3aed,stroke-width:2px,color:#000
+    style Fund fill:#a78bfa,stroke:#7c3aed,stroke-width:2px,color:#000
+    style Sent fill:#a78bfa,stroke:#7c3aed,stroke-width:2px,color:#000
+    style Opt fill:#fb923c,stroke:#ea580c,stroke-width:2px,color:#000
+    style React fill:#86efac,stroke:#16a34a,stroke-width:2px,color:#000
+    style RAG fill:#fca5a5,stroke:#dc2626,stroke-width:2px,color:#000
+    style Report fill:#fbbf24,stroke:#d97706,stroke-width:2px,color:#000
+    style End fill:#67e8f9,stroke:#0891b2,stroke-width:2px,color:#000

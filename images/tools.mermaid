@@ -1,0 +1,27 @@
+graph TB
+    subgraph "Tool Registry"
+        Registry[Tool Registry]
+        Stock[Stock Data Tool]
+        Calc[Calculator Tool]
+        Web[Web Search Tool]
+        SQL[SQL Query Tool]
+    end
+    
+    subgraph "Tool Execution"
+        Agent([Agent Request]) --> Discover[Discover Tools]
+        Discover --> Schema[Read Schema]
+        Schema --> Validate[Validate Input]
+        Validate --> Exec[Execute Tool]
+        Exec --> Result([Tool Result])
+    end
+    
+    Registry --> Discover
+    Stock --> Schema
+    Calc --> Schema
+    Web --> Schema
+    SQL --> Schema
+    
+    style Registry fill:#a78bfa,stroke:#7c3aed,stroke-width:2px,color:#000
+    style Agent fill:#67e8f9,stroke:#0891b2,stroke-width:2px,color:#000
+    style Exec fill:#86efac,stroke:#16a34a,stroke-width:2px,color:#000
+    style Result fill:#67e8f9,stroke:#0891b2,stroke-width:2px,color:#000
